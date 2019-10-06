@@ -1,0 +1,25 @@
+octopus:
+  replicated: true
+  fully_replicated: false
+  environments:
+    - development
+    - staging
+
+  development:
+    readonly:
+      host: 127.0.0.1
+      adapter: mysql2
+      encoding: utf8
+      reconnect: false
+      pool: 5
+      database: test_db2
+      username: root
+      password:
+
+  staging:
+    slave1:
+      host: 194.32.45.61
+      adapter: mysql
+      database: octopus_shard2
+
+
